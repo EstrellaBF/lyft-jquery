@@ -1,1 +1,20 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container-logo {
+  background: linear-gradient(rgb(0,0,0)62%, rgb(230, 28, 28));
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 50vw;
+}
+
 
