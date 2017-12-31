@@ -54,5 +54,16 @@ $(document).ready(function() {
     };
   });
 
+  // función para sacar el número aleatorio
+  var num = 10;
+  var count = 0;
+  // console.log(Math.floor(Math.random() * num.length)); //retorna numeros entre el 1 al 10
+  for(var i = 0; i < num; i++){
+    console.log(Math.floor(Math.random() * num));
+    var bla = Math.floor(Math.random() * num);
+    console.log(bla);
+  }
+  
+  
 
 });
