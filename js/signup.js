@@ -1,8 +1,10 @@
 $(document).ready(function() {
   var $flagIcon = $('.flag-icon');
-  var indexCode;
   var rutaLocal = '../assets/images/';
-  var arrImages = [
+  var $input = $('.form-control');
+  var $next = $('.btn-primary');
+  var $messageSMS = $('#message-sms');
+  var countries = [
     {url: 'peru.png',
     code:'+51'},
     {url: 'chile.png',
@@ -12,53 +14,45 @@ $(document).ready(function() {
     {url: 'brazil.png',
     code:'+55'}
   ];
-  
-  // console.log(arrImages[0]);
-  // console.log(arrImages[0].url); //peru.png
-  // console.log(arrImages[0].code); //+51
 
-  // console.log(arrImages);
-  // console.log(arrImages[0].url); //peru.png
-  // var cosha = arrImages[0].url;
-  // console.log($flagIcon.eq(0).attr({'src': rutaLocal + arrImages[0].url, 'alt':arrImages[0].url}));
-  // console.log(arrImages.length);
+  //Desabilitando boton next y el input
+  $next.prop('disabled', true);
+  $input.prop('disabled', true);
 
-  //Creando función en caso se quiera añadir más banderas o paises y sea más dinámico, solo se tendría que añadir el id con el nombre del país a la sede y añadir al array postalcode
+  //Creando función en caso se quiera añadir más banderas o paises y sea más dinámico
+  //Sólo se tendría que añadir el nombre de la imagen y su código en el objeto
   function flags(){
-    $.each(arrImages, function(index, val){
+    $.each(countries, function(index, val){
       $flagIcon.eq(index).attr('src', rutaLocal + val.url);
     });
   };
   flags();
 
   //función para que jale los codigos y los ponga en el input
-  $flagIcon.on('click', function(e){  
-    console.log(e.target);
-    console.log(e.currentTarget);
-    console.log($(this).attr('src')); //../assets/images/peru.png
-    console.log($(this).attr('src')); //../assets/images/peru.png
-    console.log($('#postal-code-number'))
-    for(var i = 0; i < arrImages.length; i ++){
+  function getCallingCode(){  
+    for(var i = 0; i < countries.length; i ++){
       // debugger
-      if($(this).attr('src') === rutaLocal + arrImages[i].url){
-        $('#postal-code-number').text(arrImages[i].code);
-        
+      if($(this).attr('src') === rutaLocal + countries[i].url){
+        $('#calling-code').text(countries[i].code);
+        $input.prop('disabled', false);
       };
     };
-    
+  }
+  // Ejecutando la función en el evento click
+  $flagIcon.on('click', getCallingCode); 
+
+  // Evento para poder confirmar la cantidad de números que se ingresa
+  $input.on('input', function(){
+    // console.log($(this).val()); //los numeros que se van poniendo
+    // console.log($(this).val().length); //la cantidad de digitos
+    // Se limita a 9 dígitos para perú y 10 dígitos para los otros paises
+    if($(this).val().length >= 9 &&  $(this).val().length <=10){
+      $next.prop('disabled', false);
+      $messageSMS.text('We\'ll send a text to verify your phone');
+    } else {
+      $next.prop('disabled', true);
+    };
   });
 
-      
-      // console.log(val); //{url: "peru.png", code: "+51"}
-      // console.log(arrImages[index].url);//peru.png
-      // console.log($(this).attr('src'));
-      // console.log($('#peru').attr('src'));//../assets/images/peru.png
-      // console.log($flagIcon);
-      // if($(this).attr('src') === rutaLocal + arrImages[index].url){
-      //   console.log(true);
-      // } else {
-      //   console.log(false);
-      // };
-      
-  
+
 });
