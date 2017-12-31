@@ -12,7 +12,10 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-1">
+        <a href="signup.html"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+      </div>
+      <div class="col-xs-10">
         <div>
           <h3>Verify your phone number</h3>
           <p>Join now for free ride credit</p>
@@ -28,8 +31,41 @@
         </div>
         <div>
           <p id="phone-code"></p>
-          <button type="button" class="btn btn-lg btn-primary" id="button-resend">RESEND CODE</button>
+          <button type="button" class="btn btn-lg btn-primary" id="button-resend" data-toggle="modal" data-target=".bs-example-modal-sm">RESEND CODE</button>
         </div>
+        <!-- Small modal
+        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div id="info-code-sms">
+                  <p>LAB-</p>
+                  <p id="code-sms"></p>
+                </div>
+             
+                <div class="modal-footer">
+                  <button type="button" id ="button-ok-code" class="btn btn-default" >Ok</button> <!-- data-dismiss="modal" 
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div id="info-code-sms">
+                    <p>LAB-</p>
+                    <p id="code-sms"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Small modal -->
       </div>
     </div>
     <div class="row">

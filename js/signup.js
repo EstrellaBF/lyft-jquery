@@ -83,4 +83,9 @@ $(document).ready(function() {
     localStorage.randomNumber = $codeSms.text();
     window.location.href = 'verify.html';
   });
+
+  //Evento para el button next
+  $next.on('click', function(){
+    window.location.href = 'verify.html'
+  });
 });

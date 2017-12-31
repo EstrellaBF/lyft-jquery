@@ -91,3 +91,18 @@
 div#info-code-sms {
   display: flex;
 }
+
+/* ACCOUNT */
+.box-user-mail {
+  margin: 2em 0;
+}
+
+.user-input {
+  /* border: none; */
+  width: 48%;
+}
+
+.mail-input {
+  width: 100%;
+}
+
