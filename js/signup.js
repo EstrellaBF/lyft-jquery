@@ -52,6 +52,7 @@ $(document).ready(function() {
   // Evento para poder confirmar la cantidad de números que se ingresa
   $input.on('input', function(){
     if($(this).val().length >= 9 &&  $(this).val().length <=10){
+      localStorage.phoneNumber = $(this).val();
       $next.prop('disabled', false);
       $messageSMS.text('We\'ll send a text to verify your phone');
       $buttonSendSms.show();
