@@ -15,7 +15,6 @@
     <div class="row">
       <div class="col-xs-1">
         <a href="register.html"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
-        
       </div>
       <div class="col-xs-10">
         <h2>Sign Up</h2>
@@ -40,20 +39,36 @@
               <li><a href="#"><img src="" class="flag-icon img-responsive" alt="Responsive image"></a></li>
             </ul>
           </div>
-          <div class="input-number-box">
+          <div class="input-group input-number-box">
             <p id="calling-code"></p>
-            <input type="number" class="form-control" aria-label="..." min="9" max="10">
+            <input type="numer" class="form-control" aria-label="...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button" id="button-send-sms"  data-toggle="modal" data-target=".bs-example-modal-sm">Go!</button>
+            </span>
           </div>
+          <!-- Small modal -->
+          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                ...
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Small modal -->
         </div>    
         <h4 id="message-sms"></h4> 
       </div>
       <div class="col-xs-10 col-xs-offset-1">
-        <div class="button-next">
-          <button type="button" class="btn btn-lg btn-primary">NEXT</button>
+        <div class="">
+          <button type="button" class="btn btn-lg btn-primary" id="button-next">NEXT</button>
         </div>
       </div>
     </div>
-    <!-- End form numer -->
+    <!-- End form number -->
   </div>
   <script src="../vendors/js/jquery.js"></script>
   <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>

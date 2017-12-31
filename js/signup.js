@@ -2,8 +2,9 @@ $(document).ready(function() {
   var $flagIcon = $('.flag-icon');
   var rutaLocal = '../assets/images/';
   var $input = $('.form-control');
-  var $next = $('.btn-primary');
+  var $next = $('#button-next');
   var $messageSMS = $('#message-sms');
+  var $buttonSendSms = $('#button-send-sms');
   var countries = [
     {url: 'peru.png',
     code:'+51'},
@@ -18,6 +19,7 @@ $(document).ready(function() {
   //Desabilitando boton next y el input
   $next.prop('disabled', true);
   $input.prop('disabled', true);
+  $buttonSendSms.hide();
 
   //Creando función en caso se quiera añadir más banderas o paises y sea más dinámico
   //Sólo se tendría que añadir el nombre de la imagen y su código en el objeto
@@ -49,6 +51,7 @@ $(document).ready(function() {
     if($(this).val().length >= 9 &&  $(this).val().length <=10){
       $next.prop('disabled', false);
       $messageSMS.text('We\'ll send a text to verify your phone');
+      $buttonSendSms.show();
     } else {
       $next.prop('disabled', true);
     };
