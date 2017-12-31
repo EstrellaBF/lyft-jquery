@@ -55,16 +55,16 @@ $(document).ready(function() {
   });
 
   // función para sacar el número aleatorio
-  var num = 4;
+  var num = '0123456789';
   var count = 0;
   var arr="";
   // console.log(Math.floor(Math.random() * num.length)); //retorna numeros entre el 1 al 10
   // IMPORTANTE : El valor de num jalará un total de n iteraciones, y al poner length, los números aleatorios tendrán length digitos
   // EJEMPLO: num="10" al tener length = 2, los números aleatorios serán 0 y 1 (al poner en el for i< num, será 0 y 1), y se verán reflejados en consola 10 veces.
-  for(var i = 0; i < num; i++){
+  for(var i = 0; i < 4; i++){
     //debugger
     // console.log(Math.floor(Math.random() * num)); // numeros aleatorios uno por uno incluyendo el 9
-    var nuevo = Math.floor(Math.random() * num); // siendo num "12" jala 0 y 1(length) y siendo un total de 12 veces 
+    var nuevo = Math.floor(Math.random() * num.length); // siendo num "12" jala 0 y 1(length) y siendo un total de 12 veces 
     // console.log(bla);
     // console.log(nuevo);
     arr = arr + nuevo;
