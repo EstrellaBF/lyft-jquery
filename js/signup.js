@@ -32,12 +32,16 @@ $(document).ready(function() {
   };
   flags();
 
+  // localStorage.clear();
+
   //función para que jale los codigos y los ponga en el input
   function getCallingCode(){  
     for(var i = 0; i < countries.length; i ++){
       // debugger
       if($(this).attr('src') === rutaLocal + countries[i].url){
         $('#calling-code').text(countries[i].code);
+        localStorage.codeNumber = countries[i].code;
+        console.log(localStorage);
         $input.prop('disabled', false);
       };
     };
@@ -65,7 +69,7 @@ $(document).ready(function() {
       var nuevo = Math.floor(Math.random() * num.length); // siendo num "12" jala 0 y 1(length) y siendo un total de 12 veces 
       arr = arr + nuevo;
       console.log(arr);  //arroja cantidades de numero hasta el valor de num 1111001110
-      $codeSms.text("LAB - " + arr);
+      $codeSms.text(arr);
     } 
   };
   
@@ -74,14 +78,8 @@ $(document).ready(function() {
 
   //Evento para guardar el dato en el local storage
   $buttonOkCode.on('click', function(e){
-  console.log($codeSms.text());
     e.preventDefault();
-    localStorage.codeNumber = $codeSms.text();
-    console.log(localStorage);
-    window.location.href = 'index.html';
+    localStorage.randomNumber = $codeSms.text();
+    window.location.href = 'verify.html';
   });
-
-  console.log(localStorage.test1 ="pollo");
-  console.log(localStorage.test2 ="peluche");
-
 });

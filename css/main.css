@@ -83,10 +83,11 @@
   min-width: 0px; 
 }
 
-
-
-
 .input-number-box{
   display: flex;
   outline: 1px solid blue;
+}
+
+div#info-code-sms {
+  display: flex;
 }
