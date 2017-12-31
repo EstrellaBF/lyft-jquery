@@ -5,6 +5,8 @@ $(document).ready(function() {
   var $next = $('#button-next');
   var $messageSMS = $('#message-sms');
   var $buttonSendSms = $('#button-send-sms');
+  var $codeSms = $('#code-sms');
+  var $buttonOkCode = $('#button-ok-code');
   var countries = [
     {url: 'peru.png',
     code:'+51'},
@@ -45,9 +47,6 @@ $(document).ready(function() {
 
   // Evento para poder confirmar la cantidad de números que se ingresa
   $input.on('input', function(){
-    // console.log($(this).val()); //los numeros que se van poniendo
-    // console.log($(this).val().length); //la cantidad de digitos
-    // Se limita a 9 dígitos para perú y 10 dígitos para los otros paises
     if($(this).val().length >= 9 &&  $(this).val().length <=10){
       $next.prop('disabled', false);
       $messageSMS.text('We\'ll send a text to verify your phone');
@@ -58,22 +57,31 @@ $(document).ready(function() {
   });
 
   // función para sacar el número aleatorio
-  var num = '0123456789';
-  var count = 0;
-  var arr="";
-  // console.log(Math.floor(Math.random() * num.length)); //retorna numeros entre el 1 al 10
-  // IMPORTANTE : El valor de num jalará un total de n iteraciones, y al poner length, los números aleatorios tendrán length digitos
-  // EJEMPLO: num="10" al tener length = 2, los números aleatorios serán 0 y 1 (al poner en el for i< num, será 0 y 1), y se verán reflejados en consola 10 veces.
-  for(var i = 0; i < 4; i++){
-    //debugger
-    // console.log(Math.floor(Math.random() * num)); // numeros aleatorios uno por uno incluyendo el 9
-    var nuevo = Math.floor(Math.random() * num.length); // siendo num "12" jala 0 y 1(length) y siendo un total de 12 veces 
-    // console.log(bla);
-    // console.log(nuevo);
-    arr = arr + nuevo;
-    console.log(arr);  //arroja cantidades de numero hasta el valor de num 1111001110
-  }
+  function ramdonNumber(){
+    var num = '0123456789';
+    var arr="";
+    var code;
+    for(var i = 0; i < 4; i++){
+      var nuevo = Math.floor(Math.random() * num.length); // siendo num "12" jala 0 y 1(length) y siendo un total de 12 veces 
+      arr = arr + nuevo;
+      console.log(arr);  //arroja cantidades de numero hasta el valor de num 1111001110
+      $codeSms.text("LAB - " + arr);
+    } 
+  };
   
-  
+  // Evento para que cuando se envie el mensaje, se muestre el código en el modal
+  $buttonSendSms.on('click', ramdonNumber);
+
+  //Evento para guardar el dato en el local storage
+  $buttonOkCode.on('click', function(e){
+  console.log($codeSms.text());
+    e.preventDefault();
+    localStorage.codeNumber = $codeSms.text();
+    console.log(localStorage);
+    window.location.href = 'index.html';
+  });
+
+  console.log(localStorage.test1 ="pollo");
+  console.log(localStorage.test2 ="peluche");
 
 });
