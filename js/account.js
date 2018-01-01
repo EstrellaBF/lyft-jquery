@@ -20,4 +20,6 @@ $(document).ready(function(){
     localStorage.mail = $(this).val();
   });
 
+  
+
 });

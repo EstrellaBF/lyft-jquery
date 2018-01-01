@@ -5,12 +5,19 @@
 }
 
 .container-logo {
-  background: linear-gradient(rgb(0,0,0)62%, rgb(230, 28, 28));
+  /* background: linear-gradient(rgb(0,0,0)62%, rgb(230, 28, 28)); */
   height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  background: -moz-radial-gradient(center, ellipse cover, rgb(68, 40, 40) 0%, rgba(157, 12, 12, 0.82) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(68, 40, 40)), color-stop(100%, rgba(157, 12, 12, 0.82)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgb(68, 40, 40) 0%, rgba(157, 12, 12, 0.82) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgb(68, 40, 40) 0%, rgba(157, 12, 12, 0.82) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgb(68, 40, 40) 0%, rgba(157, 12, 12, 0.82) 100%);
+    background: radial-gradient(ellipse at center, rgb(68, 40, 40) 0%, rgba(157, 12, 12, 0.82) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FF0000', endColorstr='#000000',GradientType=1 );
 }
 
 .logo {
@@ -69,6 +76,16 @@
 } 
 
 /* SIGN UP */
+.nav-info {
+  width: 100%;
+  display: flex;
+  align-items: baseline;
+}
+
+#back-arrow {
+  font-size: 2em;
+}
+
 .header-sign-up {
   outline: 2px solid aqua;
   display: flex;
