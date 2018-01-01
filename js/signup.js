@@ -39,7 +39,7 @@ $(document).ready(function() {
     for(var i = 0; i < countries.length; i ++){
       // debugger
       if($(this).attr('src') === rutaLocal + countries[i].url){
-        $('#calling-code').text(countries[i].code);
+        $('#calling-code').text(countries[i].code).css('margin', '0 0.3em 0 1em');
         localStorage.codeNumber = countries[i].code;
         console.log(localStorage);
         $input.prop('disabled', false);
@@ -63,7 +63,7 @@ $(document).ready(function() {
 
   // función para sacar el número aleatorio
   function ramdonNumber(){
-    debugger
+    // debugger
     var num = '0123456789';
     var arr="";
     var code;
