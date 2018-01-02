@@ -12,26 +12,26 @@
 <body>
   <div class="container">
     <div class="row">
-      <div class="col-xs-1">
-        <a href="verify.html"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
-      </div>
-      <div class="col-xs-10">
-        <h2>Sign Up</h2>
-        <p>Join now for free ride credit.</p>
-        <hr>
+      <div class="col-xs-12">
+        <div class="nav-info">
+          <a href="verify.html" id="back-arrow"><i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+          <h3>Sign Up</h3>
+        </div>
       </div>
     </div>
     <!-- Name and email form -->
-    <di q 2v class="row">
+    <div class="row">
       <div class="col-xs-12">
+        <p>Join now for free ride credit.</p>
+        <hr>
         <div class="input-group box-user-mail">
           <span class="input-group-addon" id="basic-addon1">
             <i class="fa fa-user-o" aria-hidden="true"></i>
           </span>
           <!-- <div class="form-control input-user-mail" id="input-user-mail" placeholder="Username" aria-describedby="basic-addon1"> -->
           <div class="form-control input-user-mail" id="basic-url" aria-describedby="basic-addon3">
-            <input type="text" name="" id="first-name" class="user-input" placeholder="First Name">
-            <input type="text" name="" id="last-name" class="user-input" placeholder="Last Name">
+            <input type="text" name="" id="first-name" class="user-input input-account" placeholder="First Name">
+            <input type="text" name="" id="last-name" class="user-input input-account" placeholder="Last Name">
           </div>
         </div>
         <div class="input-group box-user-mail">
@@ -39,17 +39,20 @@
             <i class="fa fa-envelope-o" aria-hidden="true"></i>
           </span>
           <div class="form-control" id="basic-url" aria-describedby="basic-addon3">
-            <input type="email" name="" id="mail-input" class="mail-input" placeholder="Email">
+            <input type="email" name="" id="mail-input" class="mail-input input-account" placeholder="Email">
           </div>
         </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> I agree to Lyft'ss <a href="#">Terms of Service</a>
+          </label>
+        </div>
       </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> I agree to Lyft'ss <a href="#">Terms of Service</a>
-        </label>
+      <div class="col-xs-12">
+        <div class="button-next">
+          <button type="button" class="btn btn-lg btn-primary" id="button-next">NEXT</button>
+        </div>
       </div>
-
-      
     </div>
     <!-- End name and email form -->
   </div>

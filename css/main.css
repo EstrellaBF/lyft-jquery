@@ -119,15 +119,21 @@ div#info-code-sms {
   margin-top: 1em;
 }
 
+.button-send {
+  text-align: center;
+  margin-top: 1em;
+}
+/* 
 .button-next {
   margin-top: 3em;
-}
+} */
 
 .button-next button {
   border-radius: 0;
   border: none;
   background: #dfdfdf;
   color: #aeaeae;
+  margin-top: 7em;
   width: 100%;
 }
 /* end Sign up */
@@ -151,7 +157,13 @@ div#info-code-sms {
 }
 
 /* end verify */
+
 /* ACCOUNT */
+
+.input-account {
+  border: none;
+}
+
 .box-user-mail {
   margin: 2em 0;
 }

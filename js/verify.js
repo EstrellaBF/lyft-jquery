@@ -30,9 +30,9 @@ $(document).ready(function(){
   $verifyCode.on('keyup', function(event){
     console.log($(this).val().length);
     if($(this).val()=== localStorage.randomNumber){
-      $next.prop('disabled', false);
+      $next.prop('disabled', false).css({"background-color": "#ea0b8c","color": "#fff"}).prop('disabled', false);
     } else {
-      $next.prop('disabled', true);
+      $next.prop('disabled', true).css({"background-color": "#dfdfdf","color": "#aeaeae"});
     };
   });
 

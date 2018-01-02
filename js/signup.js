@@ -51,6 +51,7 @@ $(document).ready(function() {
 
   // Se pone type number pero de alguna forma detecta la E, jalo función de verify.js para limitar a solo números
   // Al ponerlo funciona perfectamente
+  // Se verifica un máximo de hasta 10 dígitos.
   $input.on('keypress', function(event){
     if (event.which < 48 || event.which > 57 || this.value.length  >= 10) {
     // retorna falso porque no se ejecutará, con true se omite y aceptará letras
@@ -60,7 +61,8 @@ $(document).ready(function() {
     };
   });
 
-  // Evento para poder confirmar la cantidad de números que se ingresa
+  // Evento para poder confirmar la cantidad de números que se ingresa.
+  // Dígitos serán entre 9 o 10, 9 para Perú y 10 como máximo como se pide en el LMS
   $input.on('input', function(){
     if($(this).val().length >= 9 &&  $(this).val().length <=10){
       localStorage.phoneNumber = $(this).val();
@@ -93,9 +95,7 @@ $(document).ready(function() {
   $buttonOkCode.on('click', function(e){
     e.preventDefault();
     localStorage.randomNumber = $codeSms.text();
-    $next.css({"background-color": "#ea0b8c",
-      "color": "#fff"
-    }).prop('disabled', false);
+    $next.css({"background-color": "#ea0b8c","color": "#fff"}).prop('disabled', false);
   });
 
   //Evento para el button next
