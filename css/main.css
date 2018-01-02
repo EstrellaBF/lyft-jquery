@@ -28,7 +28,7 @@ p {
   width: 50vw;
 }
 
-/* LOGIN */
+/* REGISTER */
 .register-backgound {
   background: -moz-radial-gradient(center, ellipse cover, rgb(68, 40, 40) 0%, rgba(157, 12, 12, 0.82) 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(68, 40, 40)), color-stop(100%, rgba(157, 12, 12, 0.82)));
@@ -44,7 +44,7 @@ p {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: 5em;
+  margin-top: 1em;
 }
 
 .header-logo img {
@@ -52,7 +52,7 @@ p {
 }
 
 .main-logo {
-  margin: 8.5em 0;
+  margin: 7em 0;
 }
 
 .buttons-login {
@@ -113,6 +113,10 @@ p {
 
 div#info-code-sms {
   display: flex;
+  font-size: 2.2rem;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1em;
 }
 
 /* ACCOUNT */

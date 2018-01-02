@@ -55,9 +55,10 @@ $(document).ready(function() {
       localStorage.phoneNumber = $(this).val();
       $next.prop('disabled', false);
       $messageSMS.text('We\'ll send a text to verify your phone');
-      $buttonSendSms.show();
+      $buttonSendSms.show().css({'background-color': 'green', 'color':'#fff'});
     } else {
       $next.prop('disabled', true);
+      $messageSMS.text('');
     };
   });
 
