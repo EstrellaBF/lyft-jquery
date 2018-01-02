@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var $flagIcon = $('.flag-icon');
   var rutaLocal = '../assets/images/';
-  var $input = $('.form-control');
+  var $input = $('#form-control');
   var $next = $('#button-next');
   var $messageSMS = $('#message-sms');
   var $buttonSendSms = $('#button-send-sms');
@@ -49,11 +49,21 @@ $(document).ready(function() {
   // Ejecutando la función en el evento click
   $flagIcon.on('click', getCallingCode); 
 
+  // Se pone type number pero de alguna forma detecta la E, jalo función de verify.js para limitar a solo números
+  // Al ponerlo funciona perfectamente
+  $input.on('keypress', function(event){
+    if (event.which < 48 || event.which > 57 || this.value.length  >= 10) {
+    // retorna falso porque no se ejecutará, con true se omite y aceptará letras
+      return false;
+    } else {
+      return true;
+    };
+  });
+
   // Evento para poder confirmar la cantidad de números que se ingresa
   $input.on('input', function(){
     if($(this).val().length >= 9 &&  $(this).val().length <=10){
       localStorage.phoneNumber = $(this).val();
-      $next.prop('disabled', false);
       $messageSMS.text('We\'ll send a text to verify your phone');
       $buttonSendSms.show().css({'background-color': 'green', 'color':'#fff'});
     } else {
@@ -83,7 +93,9 @@ $(document).ready(function() {
   $buttonOkCode.on('click', function(e){
     e.preventDefault();
     localStorage.randomNumber = $codeSms.text();
-    window.location.href = 'verify.html';
+    $next.css({"background-color": "#ea0b8c",
+      "color": "#fff"
+    }).prop('disabled', false);
   });
 
   //Evento para el button next

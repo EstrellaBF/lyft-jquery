@@ -79,7 +79,7 @@ p {
   width: 100%;
 }
 
-.nav-info h2 {
+.nav-info h3 {
   color: #0d2155;
   text-align: center;
   width: 90%;
@@ -119,6 +119,38 @@ div#info-code-sms {
   margin-top: 1em;
 }
 
+.button-next {
+  margin-top: 3em;
+}
+
+.button-next button {
+  border-radius: 0;
+  border: none;
+  background: #dfdfdf;
+  color: #aeaeae;
+  width: 100%;
+}
+/* end Sign up */
+
+/* VERIFY */
+.enter-code {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.enter-code input {
+  border: none;
+  border-bottom: 1px solid #337ab7;
+  text-align: center;
+  width: 10vw;
+}
+
+.button-next {
+  border
+}
+
+/* end verify */
 /* ACCOUNT */
 .box-user-mail {
   margin: 2em 0;
