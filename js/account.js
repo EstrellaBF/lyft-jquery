@@ -5,20 +5,22 @@ $(document).ready(function(){
   var $inputAccount = $('.input-account');
 
   // Evento para guardar el first name
-  $firstName.on('keyup', function(e){
+  $firstName.on('input', function(e){
     console.log($(this).val().length);
     localStorage.fistName = $(this).val();
   });
 
   // Evento para guardar el last name
-  $lastName.on('keyup', function(e){
+  $lastName.on('input', function(e){
     console.log($(this).val());
     localStorage.lastName = $(this).val();
   });
 
-  // Evento para guardar el email
-  $mailInput.on('keyup', function(){
+  // Evento para guardar el email y verificar que sea email
+  $mailInput.on('input', function(){
     localStorage.mail = $(this).val();
+    var patternEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+    console.log(patternEmail.test($(this).val()));
   });
 
 

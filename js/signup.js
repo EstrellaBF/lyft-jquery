@@ -53,7 +53,7 @@ $(document).ready(function() {
   // Al ponerlo funciona perfectamente
   // Se verifica un máximo de hasta 10 dígitos.
   $input.on('keypress', function(event){
-    if (event.which < 48 || event.which > 57 || this.value.length  >= 10) {
+    if (event.which < 48 || event.which > 57 || $(this).value.length  >= 10) {
     // retorna falso porque no se ejecutará, con true se omite y aceptará letras
       return false;
     } else {

@@ -160,7 +160,7 @@ div#info-code-sms {
 
 /* ACCOUNT */
 
-.input-account {
+.input-account, .input-email {
   border: none;
 }
 
