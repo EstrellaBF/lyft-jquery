@@ -1,11 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
   //Si se hace click
-  $('body').on('click', function(){
+  $('body').on('click', function () {
     window.location.href = 'views/register.html';
   });
-  
+
   //si no se hace click, igual se ejecutará la página restaurant
-  setTimeout(function() {
+  setTimeout(function () {
     window.location.href = 'views/register.html';
   }, 5000);
 });
