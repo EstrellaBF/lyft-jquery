@@ -27,7 +27,7 @@ $(document).ready(function () {
           // console.log(result.user);
           // guardaDatos(result.user);
           // //añadiendo mi imagen de google
-          // $('#raiz').append("<img src=' " + result.user.photoURL + " ' />");
+          // $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />");
       });   
   });
   // Escribiendo en firebase
