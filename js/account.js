@@ -63,7 +63,6 @@ $(document).ready(function () {
 
   // Función para verificar el contenido
   // if ($firstName.val().length >= 0) {
-
   //   console.log('no hay nada')
   // } else {
   //   console.log('es diferente de vacio')
