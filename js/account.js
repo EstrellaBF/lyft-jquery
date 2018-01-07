@@ -26,7 +26,7 @@ $(document).ready(function () {
       .then(function(result) {
           console.log(result.user);
           //añadiendo mi imagen de google
-          $('#raiz').append('<img src='"+result.user.photoURL+"' />');
+          $('#raiz').append("<img src=' " + result.user.photoURL + " ' />");
       });   
   });
   // End Firebase
