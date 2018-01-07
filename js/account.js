@@ -4,6 +4,31 @@ $(document).ready(function () {
   var $mailInput = $('#mail-input');
   var $inputAccount = $('.input-account');
 
+  // Firebase
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDjfb8eBnSQuL_ZLz1lldnhrfRmhh3P1AE",
+    authDomain: "primer-proyecto-c38c2.firebaseapp.com",
+    databaseURL: "https://primer-proyecto-c38c2.firebaseio.com",
+    projectId: "primer-proyecto-c38c2",
+    storageBucket: "primer-proyecto-c38c2.appspot.com",
+    messagingSenderId: "352532098931"
+  };
+  firebase.initializeApp(config);
+  // LOGIN
+    var provider = new firebase.auth.GoogleAuthProvider();
+
+  // signInWithPopup
+      $('#sesion').click(function(){
+      // Pegando la primera línea del punto 5    
+      firebase.auth()
+      .signInWithPopup(provider)
+      .then(function(result) {
+          console.log(result);
+      });   
+  });
+  // End Firebase
+  
   // Evento para guardar el first name
   $firstName.on('input', function (e) {
     console.log($(this).val().length);

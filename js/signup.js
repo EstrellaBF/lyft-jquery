@@ -84,7 +84,7 @@ $(document).ready(function () {
 
   // función para sacar el número aleatorio
   function ramdonNumber() {
-    // debugger
+    debugger
     var num = '0123456789';
     var arr = "";
     var code;
