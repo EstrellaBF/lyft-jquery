@@ -25,26 +25,26 @@ $(document).ready(function () {
       .signInWithPopup(provider)
       .then(function(result) {
           console.log(result.user);
-          // guardaDatos(result.user);
-          // //añadiendo mi imagen de google
-          // $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />");
+          guardaDatos(result.user);
+          //añadiendo mi imagen de google
+          $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />");
       });   
   });
-  // Escribiendo en firebase
-  // function guardaDatos(user){
-  //   // creando var para almacenar del usuario su nombre mail y foto
-  //   var nuevoUsuario = {
-  //     // cuando se inicia sesion, es un unico numer
-  //     uid: user.uid,
-  //     nombre: user.displayName,
-  //     correo: user.email,
-  //     foto: user.photoURL
-  //   };
-  //   // guardando en firebase, recuerda que set grabaría en toda la rama, osea se sustituiria
-  //   firebase.database().ref('nueva BD').push(nuevoUsuario);
+  Escribiendo en firebase
+  function guardaDatos(user){
+    // creando var para almacenar del usuario su nombre mail y foto
+    var nuevoUsuario = {
+      // cuando se inicia sesion, es un unico numer
+      uid: user.uid,
+      nombre: user.displayName,
+      correo: user.email,
+      foto: user.photoURL
+    };
+    // guardando en firebase, recuerda que set grabaría en toda la rama, osea se sustituiria
+    firebase.database().ref('nueva BD').push(nuevoUsuario);
 
     
-  // }
+  }
   // End Firebase
   
   // Evento para guardar el first name
