@@ -26,8 +26,9 @@ $(document).ready(function () {
       .then(function(result) {
           console.log(result.user);
           guardaDatos(result.user);
+          $('#sesion').hide();
           //añadiendo mi imagen de google
-          $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />");
+          $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />", '<p> user.displayName<p/>');
       });   
   });
   // Escribiendo en firebase
