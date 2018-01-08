@@ -30,7 +30,7 @@ $(document).ready(function () {
           $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />");
       });   
   });
-  Escribiendo en firebase
+  // Escribiendo en firebase
   function guardaDatos(user){
     // creando var para almacenar del usuario su nombre mail y foto
     var nuevoUsuario = {
