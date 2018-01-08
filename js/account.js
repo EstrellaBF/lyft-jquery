@@ -24,7 +24,7 @@ $(document).ready(function () {
       firebase.auth()
       .signInWithPopup(provider)
       .then(function(result) {
-          // console.log(result.user);
+          console.log(result.user);
           // guardaDatos(result.user);
           // //añadiendo mi imagen de google
           // $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />");
