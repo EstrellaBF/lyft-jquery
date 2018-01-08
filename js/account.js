@@ -28,7 +28,7 @@ $(document).ready(function () {
           guardaDatos(result.user);
           $('#sesion').hide();
           //añadiendo mi imagen de google
-          $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />", '<p> resultuser.displayName<p/>');
+          $('#raiz').append("<img width='100px' src=' " + result.user.photoURL + " ' />", '<p> result.user.displayName<p/>');
       });   
   });
   // Escribiendo en firebase
