@@ -40,8 +40,8 @@ $(document).ready(function () {
       correo: user.email,
       foto: user.photoURL
     };
-    // guardando en firebase, recuerda que set grabaría en toda la rama, osea se sustituiria
-    firebase.database().ref('nueva BD').push(nuevoUsuario);
+    // guardando en firebase, recuerda que set grabaría en toda la rama, osea se sustituiria. Se concatena para que se almacene en la misma user id
+    firebase.database().ref('nueva BD' + user.id).push(nuevoUsuario);
 
     
   }
